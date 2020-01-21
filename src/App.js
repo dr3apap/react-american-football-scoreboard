@@ -1,11 +1,13 @@
 //TODO: STEP 1 - Import the useState hook.
-import React from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-
+  let [score, setScore] = useState(0)
+  let [score1, setScore1] = useState(0)
   return (
     <div className="container">
       <section className="scoreboard">
@@ -39,5 +41,6 @@ function App() {
     </div>
   );
 }
-
+const rootElement = document.querySelector("#root")
+ReactDOM.render(<App />, rootElement);
 export default App;
